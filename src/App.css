@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+.header {
+  background-color: hsl(180, 29%, 50%);
+  margin-bottom: 10rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header_img {
+  background: url('./assets/bg-header-mobile.svg');
+  height: 150px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main {
+  padding-bottom: 3rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.card {
+  position: relative;
+  max-width: 350px;
+  margin: 0 auto;
+  background-color: white;
+  -webkit-box-shadow: 3px 12px 18px -6px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: 3px 12px 18px -6px rgba(0, 0, 0, 0.51);
+  box-shadow: 3px 12px 18px -6px rgba(0, 0, 0, 0.51);
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.border-right {
+  border-left: 5px solid red;
+}
+
+.logo {
+  position: absolute;
+  top: -30px;
+  width: 65px;
+}
+
+.company {
+  display: inline-flex;
+  padding: 0.5rem 0;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+h4 > span {
+  margin-left: 0.8rem;
+  background-color: aquamarine;
+  padding: 0.5rem;
+  border-radius: 80px;
+  text-transform: uppercase;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.list {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.list li {
+  margin-right: 1rem;
+}
+
+li:nth-of-type(1) {
+  list-style: none;
+}
+
+.position,
+.others,
+hr {
+  margin-bottom: 1.3rem;
+}
+.roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.roles button {
+  background: pink;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+@media (min-width: 935px) {
+  .card {
+    display: flex;
+    justify-content: space-between;
+    max-width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+  hr {
+    display: none;
+  }
+  .roles {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .logo {
+    position: relative;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 1rem;
+  }
+
+  .roles {
+    flex: 1;
   }
 }
