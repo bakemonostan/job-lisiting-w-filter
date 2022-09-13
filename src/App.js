@@ -22,7 +22,7 @@ function App() {
       }
       return jobs.level === val;
     });
-    console.log(newList);
+
     setFilteredCat(newList);
     if (!cat.includes(val)) {
       setCat([...cat, val]);
@@ -55,14 +55,7 @@ function App() {
       </header>
       <main>
         {filteredCat.map((item) => {
-          return (
-            <Joblist
-              key={item.id}
-              {...item}
-              handleClick={handleClick}
-              // filterJobs={filterJobs}
-            />
-          );
+          return <Joblist key={item.id} {...item} handleClick={handleClick} />;
         })}
       </main>
     </div>
