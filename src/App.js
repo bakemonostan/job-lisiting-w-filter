@@ -32,9 +32,10 @@ function App() {
 
   const clearCat = (arg) => {
     // if (cat.includes(arg)) {
-    //   setFilteredCat(jobs);
     // }
     setCat([]);
+    setjobLists(jobs);
+    setFilteredCat(jobs);
   };
 
   useEffect(() => {
