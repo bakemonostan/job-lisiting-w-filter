@@ -2,6 +2,7 @@ import './App.css';
 import jobs from './data.json';
 import { useEffect, useState } from 'react';
 import Joblist from './Joblist';
+import Category from './Category';
 
 function App() {
   const [jobLists, setjobLists] = useState([]);
@@ -30,28 +31,37 @@ function App() {
   };
 
   const clearCat = (arg) => {
-    if (cat.includes(arg)) {
-      setFilteredCat(jobs);
-      setCat([]);
-    }
+    // if (cat.includes(arg)) {
+    //   setFilteredCat(jobs);
+    // }
+    setCat([]);
   };
 
   useEffect(() => {
     setjobLists(jobs);
     setFilteredCat(jobs);
   }, []);
+
   return (
     <div>
       <header className='header'>
         <div className='header_img'></div>
-
-        {cat.map((item) => {
-          return (
-            <span style={{ marginLeft: '1rem', backgroundColor: 'gray' }}>
-              {item} <button onClick={() => clearCat(item)}>X</button>
-            </span>
-          );
-        })}
+        {cat.length >= 1 && (
+          <Category>
+            <div>
+              {cat.map((item) => {
+                return (
+                  <span key={item} className='filtered_cat'>
+                    {item} <button>X</button>
+                  </span>
+                );
+              })}
+            </div>
+            <button className='clear_btn' onClick={clearCat}>
+              Clear
+            </button>
+          </Category>
+        )}
       </header>
       <main>
         {filteredCat.map((item) => {

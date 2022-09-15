@@ -88,7 +88,8 @@ hr {
   gap: 0.5rem;
 }
 
-.roles button {
+.roles button,
+.filtered_cat {
   background: hsl(180, 52%, 96%);
   color: hsl(180, 29%, 50%);
   font-weight: 700;
@@ -97,6 +98,60 @@ hr {
   cursor: pointer;
   outline: none;
   border: none;
+}
+.filtered_cat {
+  position: relative;
+  margin-inline: 0.5rem;
+}
+.filtered_cat button {
+  color: hsl(180, 52%, 96%);
+  background: hsl(180, 29%, 50%);
+  border: none;
+  padding: 0.2rem 0.5rem;
+  position: absolute;
+  font-size: 1rem;
+  height: 100%;
+  top: 0;
+  font-weight: 700;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.roles button:hover {
+  color: hsl(180, 52%, 96%);
+  background: hsl(180, 29%, 50%);
+}
+
+.category {
+  position: absolute;
+  max-width: 350px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 100px;
+  background-color: white;
+  -webkit-box-shadow: 3px 12px 18px -6px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: 3px 12px 18px -6px rgba(0, 0, 0, 0.51);
+  box-shadow: 3px 12px 18px -6px rgba(0, 0, 0, 0.51);
+  border-radius: 5px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category div {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+
+.clear_btn {
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: hsl(180, 29%, 50%);
 }
 
 @media (min-width: 935px) {
@@ -130,5 +185,9 @@ hr {
 
   .roles {
     flex: 1;
+  }
+
+  .category {
+    max-width: 90%;
   }
 }
