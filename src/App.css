@@ -115,6 +115,7 @@ hr {
   font-weight: 700;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
+  margin-inline: 0.5rem;
 }
 
 .roles button:hover {
