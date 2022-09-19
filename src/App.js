@@ -24,15 +24,21 @@ function App() {
       return jobs.level === val;
     });
 
-    setFilteredCat(newList);
     if (!cat.includes(val)) {
       setCat([...cat, val]);
     }
+    setFilteredCat(newList);
   };
 
-  const clearCat = (arg) => {
-    // if (cat.includes(arg)) {
-    // }
+  const removeSingleCat = (item) => {
+    const newCat = cat.filter((c) => {
+      return c !== item;
+    });
+    console.log(cat);
+    setCat(newCat);
+  };
+
+  const clearCat = () => {
     setCat([]);
     setjobLists(jobs);
     setFilteredCat(jobs);
@@ -53,7 +59,10 @@ function App() {
               {cat.map((item) => {
                 return (
                   <span key={item} className='filtered_cat'>
-                    {item} <button>X</button>
+                    {item}{' '}
+                    <button type='button' onClick={() => removeSingleCat(item)}>
+                      X
+                    </button>
                   </span>
                 );
               })}
