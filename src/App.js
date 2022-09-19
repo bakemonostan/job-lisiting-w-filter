@@ -36,6 +36,7 @@ function App() {
     });
     console.log(cat);
     setCat(newCat);
+    setFilteredCat(jobs);
   };
 
   const clearCat = () => {
